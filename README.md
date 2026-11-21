@@ -12,6 +12,13 @@ Multi-agent support triage on Claude: a classifier routes each ticket, a drafter
 - Fails closed: errors, refusals, prompt injection, refunds and security tickets always reach a human
 - Python · Anthropic SDK · FastAPI · Vercel · Neon Postgres · Slack · Zendesk webhooks · GitHub Actions
 
+#### 🧭 AI engineering: [job-copilot](https://github.com/mmoshabe/job-copilot)
+A job-search copilot I use myself. It scores job posts against my CV requirement by requirement, writes cover letters that a second agent **fact-checks against the CV**, and tracks applications with follow-up reminders.
+
+- The eval's headline metric is **fabricated claims**. The fact-checker caught subtle inflations ("3 teams" → "3 teams *outside my own*"), and a wording rule took them to 0
+- Prompt-injection test: a job post telling the AI to claim "8 years Kubernetes" never got through
+- Python · Anthropic SDK · Greenhouse/Lever APIs · SQLite
+
 #### 📈 AI strategy & governance: [ai-adoption-playbook](https://github.com/mmoshabe/ai-adoption-playbook)
 The business side of the same system: options and build vs buy, an ROI model with sensitivity analysis, a gated rollout (shadow → assisted → auto), and a one-page POPIA-aware governance checklist.
 
