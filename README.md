@@ -25,11 +25,16 @@ The business side of the same system: options and build vs buy, an ROI model wit
 - **About 3-month payback** at 1,500 tickets a month, and **don't build below about 300 a month**
 - LLM spend is about 3% of the running cost; help-centre coverage is the real lever
 
-#### 💬 Implementation: WhatsApp booking assistant *(in progress)*
-WhatsApp assistant for a local service business: answers FAQs, books into Google Calendar, takes Yoco/PayFast deposits and sends reminders. Built with n8n and the WhatsApp Cloud API, with a POPIA pack and a real pilot.
+#### 💬 Implementation: [ai-booking-assistant](https://github.com/mmoshabe/ai-booking-assistant)
+Live at a real South African beauty salon. A website enquiry reaches the owner seconds later, already sorted, with a suggested reply drafted from the salon's own price list and logged to a Google Sheet. A person always sends the reply.
+
+- **Guardrails in code, not in the prompt:** every quoted price must be on the price list, a draft that confirms a booking is flagged, and so is a mismatched weekday and date. Complaints and refunds always go to the owner
+- **~$0.001 per enquiry**, hosted for **$0/month** (Oracle Always Free + Caddy HTTPS), least-privilege Google scopes (send-only Gmail)
+- Knowledge base built from the salon website's own content, so the owner's price edits flow straight into the answers
+- n8n (workflow generated from code) · Claude Haiku 5.5 · Google Sheets & Gmail APIs · Astro · Vercel · Docker · POPIA
 
 ---
 
 **How I work:** measure before claiming, keep humans in the loop where mistakes cost money, and write down the trade-offs.
 
-**Stack:** Python · TypeScript · Claude / Anthropic API · FastAPI · n8n · Postgres · Vercel · Slack & WhatsApp APIs
+**Stack:** Python · TypeScript · Claude / Anthropic API · FastAPI · n8n · Postgres · Vercel · Slack & Google APIs · Docker
