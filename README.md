@@ -29,7 +29,8 @@ The business side of the same system: options and build vs buy, an ROI model wit
 Live at a real South African beauty salon. A website enquiry reaches the owner seconds later, already sorted, with a suggested reply drafted from the salon's own price list and logged to a Google Sheet. A person always sends the reply.
 
 - **Guardrails in code, not in the prompt:** every quoted price must be on the price list, a draft that confirms a booking is flagged, and so is a mismatched weekday and date. Complaints and refunds always go to the owner
-- **~$0.001 per enquiry**, hosted for **$0/month** (Oracle Always Free + Caddy HTTPS), least-privilege Google scopes (send-only Gmail)
+- **Evaluated:** 56 labelled enquiries scored against the production code, never tuned on the held-out split. **100% of must-escalate enquiries reached the owner**, 0 drafts confirmed a booking
+- **~$0.0004 per enquiry** (measured), hosted for **$0/month** (Oracle Always Free + Caddy HTTPS), least-privilege Google scopes (send-only Gmail, free/busy-only calendar)
 - Knowledge base built from the salon website's own content, so the owner's price edits flow straight into the answers
 - n8n (workflow generated from code) · Claude Haiku 5.5 · Google Sheets & Gmail APIs · Astro · Vercel · Docker · POPIA
 
