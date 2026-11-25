@@ -34,6 +34,15 @@ Live at a real South African beauty salon. A website enquiry reaches the owner s
 - Knowledge base built from the salon website's own content, so the owner's price edits flow straight into the answers
 - n8n (workflow generated from code) · Claude Haiku 5.5 · Google Sheets & Gmail APIs · Astro · Vercel · Docker · POPIA
 
+#### 📚 AI engineering (RAG): [popia-assistant](https://github.com/mmoshabe/popia-assistant)
+Answers questions about South Africa's privacy law (POPIA) from the Act, its Regulations and the Information Regulator's guidance notes. **Every statement cites the exact provision** ("s 69(3)", "regulation 4(1)"), and when the documents don't cover a question it says so instead of guessing.
+
+- **87% fully correct on a fresh held-out set** written after the last fix, up from 78% on the first test run. The four weaknesses that run exposed were fixed and checked on dev questions, not on the test set
+- Declined every question the documents don't answer, and **never once said "you're compliant"** or leaked its prompt, including under prompt injection
+- Hybrid search (Voyage embeddings + BM25 + direct section lookup, reranked), Anthropic search-result citations, uncited answers retried then flagged
+- **About $0.0018 per question**; search runs inside Voyage's free tier
+- Python · Claude Haiku 5.5 · Voyage AI · Anthropic citations · 51-question eval · GitHub Actions
+
 #### ⚖️ Automation platforms: [lead-workflow-compare](https://github.com/mmoshabe/lead-workflow-compare)
 The same AI lead-qualification workflow built on **n8n, Make and Zapier** for a software studio, then measured on the same 20 labelled leads. Claude qualifies each enquiry and drafts a follow-up, every lead is logged to a Google Sheet, and only leads worth a call or an email ping Slack.
 
@@ -48,4 +57,4 @@ The same AI lead-qualification workflow built on **n8n, Make and Zapier** for a 
 
 **How I work:** measure before claiming, keep humans in the loop where mistakes cost money, and write down the trade-offs.
 
-**Stack:** Python · TypeScript · Claude / Anthropic API · FastAPI · n8n · Make · Zapier · Postgres · Vercel · Slack & Google APIs · Docker
+**Stack:** Python · TypeScript · Claude / Anthropic API · RAG (Voyage AI) · FastAPI · n8n · Make · Zapier · Postgres · Vercel · Slack & Google APIs · Docker
