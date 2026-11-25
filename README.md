@@ -43,6 +43,15 @@ Answers questions about South Africa's privacy law (POPIA) from the Act, its Reg
 - **About $0.0018 per question**; search runs inside Voyage's free tier
 - Python · Claude Haiku 5.5 · Voyage AI · Anthropic citations · 51-question eval · GitHub Actions
 
+#### 🧾 Implementation (document AI): [invoice-extractor](https://github.com/mmoshabe/invoice-extractor)
+Supplier invoices, till slips and phone photos of them become an accounting import file. **Claude copies what's printed; plain code decides whether it can be booked**, using SARS's own tax-invoice checklist (full vs abridged at R5,000, zero-rated items, credit notes, pro-formas, duplicates). Anything held goes to a review list with the reason in plain English.
+
+- **Every planted mistake caught** (20/20: VAT at 14%, VAT on zero-rated food, totals that don't add up, missing VAT numbers, credit notes, quotations)
+- 100% of fields read on the base set; on a hard set (hand-written, dark, sideways and low-res photos, multi-page, decimal commas) 95% routed exactly right, and the one miss was a false alarm, not a wrong booking
+- A line printed on an invoice telling the AI to record VAT as zero was ignored
+- **$0.0007 per document** with Haiku 5.5; Sonnet scored the same at 17× the cost
+- Python · Claude structured outputs (PDF + vision) · 49-document synthetic eval · GitHub Actions
+
 #### ⚖️ Automation platforms: [lead-workflow-compare](https://github.com/mmoshabe/lead-workflow-compare)
 The same AI lead-qualification workflow built on **n8n, Make and Zapier** for a software studio, then measured on the same 20 labelled leads. Claude qualifies each enquiry and drafts a follow-up, every lead is logged to a Google Sheet, and only leads worth a call or an email ping Slack.
 
