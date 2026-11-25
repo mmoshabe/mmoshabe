@@ -34,8 +34,18 @@ Live at a real South African beauty salon. A website enquiry reaches the owner s
 - Knowledge base built from the salon website's own content, so the owner's price edits flow straight into the answers
 - n8n (workflow generated from code) · Claude Haiku 5.5 · Google Sheets & Gmail APIs · Astro · Vercel · Docker · POPIA
 
+#### ⚖️ Automation platforms: [lead-workflow-compare](https://github.com/mmoshabe/lead-workflow-compare)
+The same AI lead-qualification workflow built on **n8n, Make and Zapier** for a software studio, then measured on the same 20 labelled leads. Claude qualifies each enquiry and drafts a follow-up, every lead is logged to a Google Sheet, and only leads worth a call or an email ping Slack.
+
+- **One prompt, three platforms:** each platform's version is generated from the same request file, and tests check that each one sends an identical Claude request
+- All three caught **6/6 high-fit leads** with **0 spam pings**, for about **$0.009 per 20 leads**. The real differences were operational:
+  - on its default settings, Make **switched the whole scenario off after one bad AI response**, holding later leads until someone re-enabled it
+  - Zapier **can't run it on the free plan** and rewrites timestamps on the way into Sheets
+  - n8n is the only one that lives fully in git
+- n8n · Make · Zapier · Claude Haiku 5.5 · Google Sheets API · Slack webhooks
+
 ---
 
 **How I work:** measure before claiming, keep humans in the loop where mistakes cost money, and write down the trade-offs.
 
-**Stack:** Python · TypeScript · Claude / Anthropic API · FastAPI · n8n · Postgres · Vercel · Slack & Google APIs · Docker
+**Stack:** Python · TypeScript · Claude / Anthropic API · FastAPI · n8n · Make · Zapier · Postgres · Vercel · Slack & Google APIs · Docker
