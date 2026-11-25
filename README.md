@@ -43,6 +43,15 @@ Answers questions about South Africa's privacy law (POPIA) from the Act, its Reg
 - **About $0.0018 per question**; search runs inside Voyage's free tier
 - Python · Claude Haiku 5.5 · Voyage AI · Anthropic citations · 51-question eval · GitHub Actions
 
+#### 🔌 AI engineering (MCP): [salon-mcp](https://github.com/mmoshabe/salon-mcp)
+An MCP server that connects Claude to a small salon's clients and bookings. **Claude looks things up and proposes; only the owner acts.** There's no send, delete or edit tool: messages, bookings and cancellations wait in an approval queue the owner works through outside the AI.
+
+- Permission levels (read-only hides the proposal tools entirely), MCP tool annotations, and an audit log of every call, including refused ones
+- POPIA in code: contact details masked, no "list all clients" tool, promotions refused for clients without marketing consent
+- A client note telling "the AI" to send everyone's numbers to a stranger is flagged as data, not followed
+- **Agent eval over MCP with Claude Haiku: 5/5 on held-out scenarios** (13/13 on the main set after two guidance fixes), with the one weakness the checks missed written up rather than tuned away
+- Python · MCP Python SDK v2 · Claude tool use · SQLite · GitHub Actions
+
 #### 🧾 Implementation (document AI): [invoice-extractor](https://github.com/mmoshabe/invoice-extractor)
 Supplier invoices, till slips and phone photos of them become an accounting import file. **Claude copies what's printed; plain code decides whether it can be booked**, using SARS's own tax-invoice checklist (full vs abridged at R5,000, zero-rated items, credit notes, pro-formas, duplicates). Anything held goes to a review list with the reason in plain English.
 
@@ -66,4 +75,4 @@ The same AI lead-qualification workflow built on **n8n, Make and Zapier** for a 
 
 **How I work:** measure before claiming, keep humans in the loop where mistakes cost money, and write down the trade-offs.
 
-**Stack:** Python · TypeScript · Claude / Anthropic API · RAG (Voyage AI) · FastAPI · n8n · Make · Zapier · Postgres · Vercel · Slack & Google APIs · Docker
+**Stack:** Python · TypeScript · Claude / Anthropic API · RAG (Voyage AI) · MCP · FastAPI · n8n · Make · Zapier · Postgres · Vercel · Slack & Google APIs · Docker
